@@ -4,9 +4,10 @@ const cors = require('cors')
 const app = express()
 app.use(express.json())
 app.use(cors())
+require('dotenv').config()
 
 
-const API_KEY = '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'
+const API_KEY = process.env.API_KEY
 
 app.post('/completions', async (req, res) => {
 
